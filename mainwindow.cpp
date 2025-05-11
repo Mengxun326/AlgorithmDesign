@@ -8,13 +8,27 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     QPixmap pic1("://pic/pic1.png");
     ui->pic_label->setPixmap(pic1);
-    //界面初始化设置
-
+    connect(ui->action_A,SIGNAL(triggered()),this,SLOT(on_auther_clicked()));
+    connect(ui->action_Y,SIGNAL(triggered()),this,SLOT(on_explain_clicked()));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_auther_clicked()
+{
+    myauthor *c = new myauthor();
+    c->setWindowModality(Qt::ApplicationModal);
+    c->show();
+}
+
+void MainWindow::on_explain_clicked()
+{
+    explain *c = new explain();
+    c->setWindowModality(Qt::ApplicationModal);
+    c->show();
 }
 
 // 快速选择算法实现
