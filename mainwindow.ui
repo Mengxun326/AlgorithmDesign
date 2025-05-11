@@ -3731,18 +3731,24 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
    </property>
    <widget class="QMenu" name="menu_1">
     <property name="title">
-     <string>作者</string>
+     <string>关于(&amp;E)</string>
     </property>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>说明</string>
-    </property>
+    <addaction name="action_Y"/>
+    <addaction name="action_A"/>
    </widget>
    <addaction name="menu_1"/>
-   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Y">
+   <property name="text">
+    <string>说明(&amp;Y)</string>
+   </property>
+  </action>
+  <action name="action_A">
+   <property name="text">
+    <string>团队信息(&amp;A)</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
