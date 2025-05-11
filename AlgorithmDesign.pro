@@ -9,14 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    explain.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    myauthor.cpp
 
 HEADERS += \
-    mainwindow.h
+    explain.h \
+    mainwindow.h \
+    myauthor.h
 
 FORMS += \
-    mainwindow.ui
+    explain.ui \
+    mainwindow.ui \
+    myauthor.ui
 
 TRANSLATIONS += \
     AlgorithmDesign_zh_CN.ts
@@ -29,6 +35,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    re1.qrc
+    re.qrc
 
 RC_ICONS = logo2.ico
+
+DISTFILES +=
