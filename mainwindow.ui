@@ -6,23 +6,3705 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>807</width>
+    <height>700</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>700</height>
+   </size>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <property name="windowTitle">
+   <string>算法设计与分析课程设计</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_20">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">QTabWidget {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+QTabWidget::pane {
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin-top: -1px;
+}
+
+/* 标签页样式 */
+QTabBar::tab {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 8px 16px;
+    min-width: 80px;
+    color: #333333;
+    font-size: 14px;
+    margin-right: -1px;
+}
+
+QTabBar::tab:selected {
+    background-color: #ffffff;
+    color: #4CAF50;
+    font-weight: 500;
+    border-color: #d1d5da;
+    border-bottom-color: #ffffff;
+}
+
+QTabBar::tab:hover {
+    background-color: #f0f0f0;
+}
+
+QTabBar::tab:disabled {
+    color: #cccccc;
+}
+
+/* 标签页位置调整 */
+QTabBar::tab:first {
+    margin-left: 0;
+}
+
+QTabBar::tab:last {
+    margin-right: 0;
+}
+
+/* 左侧标签样式 */
+QTabWidget::left-corner {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+/* 右侧标签样式 */
+QTabWidget::right-corner {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+/* 滚动按钮样式 */
+QTabBar::scroller {
+    width: 20px;
+}
+
+QTabBar::scroll-button {
+    border: 1px solid #d1d5da;
+    background: #f5f7fa;
+    width: 20px;
+    height: 20px;
+    subcontrol-origin: margin;
+    subcontrol-position: top right;
+}
+
+QTabBar::scroll-button:hover {
+    background: #e0e0e0;
+}</string>
+      </property>
+      <property name="currentIndex">
+       <number>5</number>
+      </property>
+      <widget class="QWidget" name="tab_1">
+       <attribute name="title">
+        <string>第k小的元素（分治算法）</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输出</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="1" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_2">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_3">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;输出第 k 小的元素。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输入</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_2">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第 1 行：输入整数 n (0 &amp;lt; n &amp;lt;= 100)，表示整数的数量。&lt;/p&gt;&lt;p&gt;第 2 行：依次输入 n 个整数。&lt;/p&gt;&lt;p&gt;第 3 行：输入整数 k (k &amp;lt;= n)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QPushButton" name="pushButton_1">
+             <property name="maximumSize">
+              <size>
+               <width>112</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #4CAF50, stop:1 #45a049);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #45a049, stop:1 #3d8b40);
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #3d8b40, stop:1 #357a38);
+}
+
+QPushButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+QPushButton:checked {
+    background-color: #2E7D32;
+}</string>
+             </property>
+             <property name="text">
+              <string>运行</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="plainTextEdit">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>题目描述</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_7">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0;
+    white-space: pre-wrap; /* 保留自动换行支持 */
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 垂直滚动条 */
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* 水平滚动条 */
+QScrollBar:horizontal {
+    background: #f1f1f1;
+    height: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #c1c1c1;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* 只读模式样式增强 */
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #333333;
+}</string>
+             </property>
+             <property name="plainText">
+              <string>在包含n个元素的整数序列中，查找并输出第k小的元素，请基于分治思想设计一个输出第K小元素的程序，要求算法时间复杂度为O(n)。</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>选择问题（分治算法）</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0" rowspan="2" colspan="3">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>题目描述</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="0" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_8">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0;
+    white-space: pre-wrap; /* 保留自动换行支持 */
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 垂直滚动条 */
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* 水平滚动条 */
+QScrollBar:horizontal {
+    background: #f1f1f1;
+    height: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #c1c1c1;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* 只读模式样式增强 */
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #333333;
+}</string>
+             </property>
+             <property name="plainText">
+              <string>对于给定的有n个元素的数组a[0:n-1],要求从中找出第k小的元素。</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="3">
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输出</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="1" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_4">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_6">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第 k 小的元素。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="3">
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输入</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="1" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="plainTextEdit_3">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_5">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第 1 行：输入整数 n (0 &amp;lt; n &amp;lt;= 100)，表示整数的数量。&lt;/p&gt;&lt;p&gt;第 2 行：依次输入 n 个整数。&lt;/p&gt;&lt;p&gt;第 3 行：输入整数 k (k &amp;lt;= n)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="maximumSize">
+              <size>
+               <width>112</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #4CAF50, stop:1 #45a049);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #45a049, stop:1 #3d8b40);
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #3d8b40, stop:1 #357a38);
+}
+
+QPushButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+QPushButton:checked {
+    background-color: #2E7D32;
+}</string>
+             </property>
+             <property name="text">
+              <string>运行</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>数字串分解（动态规划）</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_21">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_13">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>题目描述</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_17">
+           <item row="0" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_6">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0;
+    white-space: pre-wrap; /* 保留自动换行支持 */
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 垂直滚动条 */
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* 水平滚动条 */
+QScrollBar:horizontal {
+    background: #f1f1f1;
+    height: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #c1c1c1;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* 只读模式样式增强 */
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #333333;
+}</string>
+             </property>
+             <property name="plainText">
+              <string>最近班级组织了一场别开生面的趣味竞赛活动，老师出了这样一道题目：
+设有一个长度为X的数字字符串，要求使用Y个乘号将它分成Y+1个子数字串，你需要找出一种方法，使得这Y+1个部分的乘积最大。例如一个数字串：615， Y=1时会有以下两种分法：
+(1）6*15=90
+(2）61*5=305
+符合要求的答案是：61*5=305。
+请设计一个程序计算符合要求的答案。</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox_14">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输入</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_18">
+           <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QPushButton" name="pushButton_5">
+             <property name="maximumSize">
+              <size>
+               <width>112</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #4CAF50, stop:1 #45a049);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #45a049, stop:1 #3d8b40);
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #3d8b40, stop:1 #357a38);
+}
+
+QPushButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+QPushButton:checked {
+    background-color: #2E7D32;
+}</string>
+             </property>
+             <property name="text">
+              <string>运行</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_14">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第 1 行：输入 2 个自然数 X，Y（6 ≤ X ≤ 10，1 ≤ Y ≤ 6）。&lt;/p&gt;&lt;p&gt;第 2 行：输入一个长度为 X 的数字字符串。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="plainTextEdit_9">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupBox_15">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输出</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_19">
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_15">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;输出所求得的最大乘积（一个自然数）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_10">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>滑雪（动态规划）</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_16">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>题目描述</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_22">
+           <item row="0" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_5">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0;
+    white-space: pre-wrap; /* 保留自动换行支持 */
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 垂直滚动条 */
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* 水平滚动条 */
+QScrollBar:horizontal {
+    background: #f1f1f1;
+    height: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #c1c1c1;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* 只读模式样式增强 */
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #333333;
+}</string>
+             </property>
+             <property name="plainText">
+              <string>Michael喜欢滑雪。为了获得速度，滑的区域必须向下倾斜，而且当滑倒坡底时，不得不再次走上坡或者等待搭载升降机。
+Michael想知道在一个区域中最长的滑坡。区域由一个二维数组给出额的每个数字代表点的高度。下面是一个例子：
+1	2	3	4	5
+16	17	18	19	6
+15	24	25	20	7
+14	23	22	21	8
+13	12	11	10	9
+一个人可以从某个点滑向上、下、左、右相邻的四个点之一，当且仅当高度减小。在上面的例子中，一条可滑行的滑坡为24 - 17 - 16 - 1。当然，25 - 24 - 23 - … - 3 - 2 - 1更长。事实上，这是最长的一条滑坡。</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox_17">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输入</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_23">
+           <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QPushButton" name="pushButton_6">
+             <property name="maximumSize">
+              <size>
+               <width>112</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #4CAF50, stop:1 #45a049);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #45a049, stop:1 #3d8b40);
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #3d8b40, stop:1 #357a38);
+}
+
+QPushButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+QPushButton:checked {
+    background-color: #2E7D32;
+}</string>
+             </property>
+             <property name="text">
+              <string>运行</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_16">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;输人的第一行表示区域的行数R和列数C(1≤R，C&amp;lt;100)。&lt;/p&gt;&lt;p&gt;下面是R行，每行有C个整数，代表高度h，0≤h≤10 000。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="plainTextEdit_11">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupBox_18">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输出</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_24">
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_17">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;输出最长滑行区域的长度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_12">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>马拦过河卒（动态规划）</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_10">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_19">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>题目描述</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_25">
+           <item row="0" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_13">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0;
+    white-space: pre-wrap; /* 保留自动换行支持 */
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 垂直滚动条 */
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* 水平滚动条 */
+QScrollBar:horizontal {
+    background: #f1f1f1;
+    height: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #c1c1c1;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* 只读模式样式增强 */
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #333333;
+}</string>
+             </property>
+             <property name="plainText">
+              <string>棋盘上A点有一个过河卒，需要走到目标B点。卒行走的规则：可以向下、或者向右。同时在棋盘上的某一点有一个对方的马（如C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点，如图中的C点和P1，……，P8，卒不能通过对方马的控制点。棋盘用坐标表示，A点(0,0)、B点(n, m) (n,m为不超过20的整数),同样马的位置坐标是需要给出的，C≠A且C≠B。现在要求你计算出卒从A点能够到达B点的路径的条数。</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="pic_label">
+             <property name="maximumSize">
+              <size>
+               <width>466</width>
+               <height>214</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Picture&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox_20">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输入</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_26">
+           <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QPushButton" name="pushButton_7">
+             <property name="maximumSize">
+              <size>
+               <width>112</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #4CAF50, stop:1 #45a049);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #45a049, stop:1 #3d8b40);
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #3d8b40, stop:1 #357a38);
+}
+
+QPushButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+QPushButton:checked {
+    background-color: #2E7D32;
+}</string>
+             </property>
+             <property name="text">
+              <string>运行</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_18">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;给出n、m和C点的坐标。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="plainTextEdit_14">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupBox_21">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输出</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_28">
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_20">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;从A点能够到达B点的路径的条数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_16">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>安排工作以达到最大收益（贪心算法）</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_22">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>题目描述</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_29">
+           <item row="0" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_17">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0;
+    white-space: pre-wrap; /* 保留自动换行支持 */
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 垂直滚动条 */
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* 水平滚动条 */
+QScrollBar:horizontal {
+    background: #f1f1f1;
+    height: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #c1c1c1;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* 只读模式样式增强 */
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #333333;
+}</string>
+             </property>
+             <property name="plainText">
+              <string>你有n个工作和 m 个工人。给定三个数组：difficulty,profit和worker，其中:
+difficulty[i]表示第 i 个工作的难度，profit[i] 表示第 i 个工作的收益。
+worker[i] 是第 i 个工人的能力，即该工人只能完成难度小于等于 worker[i] 的工作。每个工人最多只能安排一个工作，但是一个工作可以完成多次 。
+举个例子，如果 3 个工人都尝试完成一份报酬为 $1 的同样工作，那么总收益为 $3。如果一个工人不能完成任何工作，他的收益为 $0 。
+返回 在把工人分配到工作岗位后，我们所能获得的最大利润 。</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox_23">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输入</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_30">
+           <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+            <widget class="QPushButton" name="pushButton_8">
+             <property name="maximumSize">
+              <size>
+               <width>112</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #4CAF50, stop:1 #45a049);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #45a049, stop:1 #3d8b40);
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #3d8b40, stop:1 #357a38);
+}
+
+QPushButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+QPushButton:checked {
+    background-color: #2E7D32;
+}</string>
+             </property>
+             <property name="text">
+              <string>运行</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_21">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'宋体'; font-size:12pt; color:#000000;&quot;&gt;输入&lt;/span&gt;&lt;span style=&quot; font-family:'Times New Roman','serif'; font-size:12pt; color:#000000;&quot;&gt;: difficulty[], profit[], worker[]&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="plainTextEdit_18">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupBox_24">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: 1px solid #d1d5da;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    padding: 0 8px;
+    color: #4CAF50;
+    font-size: 24px; /* 进一步增大标题字体 */
+    font-weight: 700; /* 加粗程度增加 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:1 rgba(255, 255, 255, 0));
+}
+
+QGroupBox:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 折叠/展开指示器 - 使用Unicode字符替代图标 */
+QGroupBox::indicator {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    subcontrol-position: left center;
+}
+
+QGroupBox::indicator:checked {
+    text: &quot;▼&quot;;
+    color: #4CAF50;
+}
+
+QGroupBox::indicator:unchecked {
+    text: &quot;▶&quot;;
+    color: #4CAF50;
+}
+
+/* 分隔线效果 */
+QGroupBox::title::separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>输出</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_31">
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignTop">
+            <widget class="QLabel" name="label_22">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* 标题样式 */
+QLabel[class=&quot;title&quot;] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+}
+
+/* 副标题样式 */
+QLabel[class=&quot;subtitle&quot;] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+/* 正文样式 */
+QLabel[class=&quot;body&quot;] {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 提示文本样式 */
+QLabel[class=&quot;hint&quot;] {
+    font-size: 12px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* 成功状态样式 */
+QLabel[class=&quot;success&quot;] {
+    color: #4CAF50;
+}
+
+/* 警告状态样式 */
+QLabel[class=&quot;warning&quot;] {
+    color: #FFC107;
+}
+
+/* 错误状态样式 */
+QLabel[class=&quot;error&quot;] {
+    color: #F44336;
+}
+
+/* 链接样式 */
+QLabel[class=&quot;link&quot;] {
+    color: #2196F3;
+    text-decoration: underline;
+}
+
+QLabel[class=&quot;link&quot;]:hover {
+    color: #1976D2;
+    cursor: pointer;
+}
+
+/* 强调文本 */
+QLabel[class=&quot;highlight&quot;] {
+    background-color: #FFF9C4;
+    padding: 1px 4px;
+    border-radius: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;所能获得的最大利润&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPlainTextEdit" name="plainTextEdit_19">
+             <property name="styleSheet">
+              <string notr="true">QPlainTextEdit {
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    padding: 8px;
+    color: #333333;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+    /* 移除不支持的 box-shadow */
+}
+
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #f9f9f9;
+    color: #666666;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>807</width>
      <height>18</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_1">
+    <property name="title">
+     <string>作者</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>说明</string>
+    </property>
+   </widget>
+   <addaction name="menu_1"/>
+   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
