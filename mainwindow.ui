@@ -172,7 +172,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="1" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_2">
+            <widget class="QPlainTextEdit" name="plainTextEdit_out1">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -221,6 +221,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     background-color: #f9f9f9;
     color: #666666;
 }</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -483,7 +486,7 @@ QPushButton:checked {
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
-            <widget class="QPlainTextEdit" name="plainTextEdit">
+            <widget class="QPlainTextEdit" name="plainTextEdit_in1">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -597,7 +600,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_7">
+            <widget class="QPlainTextEdit" name="plainTextEdit_r1">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -678,6 +681,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     background-color: #ffffff;
     color: #333333;
 }</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
              <property name="plainText">
               <string>在包含n个元素的整数序列中，查找并输出第k小的元素，请基于分治思想设计一个输出第K小元素的程序，要求算法时间复杂度为O(n)。</string>
@@ -753,7 +759,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
            <item row="0" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_8">
+            <widget class="QPlainTextEdit" name="plainTextEdit_r2">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -835,6 +841,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     color: #333333;
 }</string>
              </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="plainText">
               <string>对于给定的有n个元素的数组a[0:n-1],要求从中找出第k小的元素。</string>
              </property>
@@ -902,7 +911,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_7">
            <item row="1" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_4">
+            <widget class="QPlainTextEdit" name="plainTextEdit_out2">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -951,6 +960,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     background-color: #f9f9f9;
     color: #666666;
 }</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -1093,7 +1105,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_6">
            <item row="1" column="0" colspan="2">
-            <widget class="QPlainTextEdit" name="plainTextEdit_3">
+            <widget class="QPlainTextEdit" name="plainTextEdit_in2">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -1218,7 +1230,7 @@ QLabel[class=&quot;highlight&quot;] {
 }</string>
              </property>
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第 1 行：输入整数 n (0 &amp;lt; n &amp;lt;= 100)，表示整数的数量。&lt;/p&gt;&lt;p&gt;第 2 行：依次输入 n 个整数。&lt;/p&gt;&lt;p&gt;第 3 行：输入整数 k (k &amp;lt;= n)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;输人有多组测试例,对每一个测试例都有2行:&lt;/p&gt;&lt;p&gt;第一行是整数m和k(1≤k&amp;lt;π≤100)，&lt;/p&gt;&lt;p&gt;第二行是n个整数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
@@ -1340,7 +1352,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_17">
            <item row="0" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_6">
+            <widget class="QPlainTextEdit" name="plainTextEdit_r3">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -1422,6 +1434,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     color: #333333;
 }</string>
              </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="plainText">
               <string>最近班级组织了一场别开生面的趣味竞赛活动，老师出了这样一道题目：
 设有一个长度为X的数字字符串，要求使用Y个乘号将它分成Y+1个子数字串，你需要找出一种方法，使得这Y+1个部分的乘积最大。例如一个数字串：615， Y=1时会有以下两种分法：
@@ -1494,7 +1509,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_18">
            <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
-            <widget class="QPushButton" name="pushButton_5">
+            <widget class="QPushButton" name="pushButton_3">
              <property name="maximumSize">
               <size>
                <width>112</width>
@@ -1614,7 +1629,7 @@ QLabel[class=&quot;highlight&quot;] {
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
-            <widget class="QPlainTextEdit" name="plainTextEdit_9">
+            <widget class="QPlainTextEdit" name="plainTextEdit_in3">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -1805,7 +1820,7 @@ QLabel[class=&quot;highlight&quot;] {
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_10">
+            <widget class="QPlainTextEdit" name="plainTextEdit_out3">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -1854,6 +1869,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     background-color: #f9f9f9;
     color: #666666;
 }</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -1932,7 +1950,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_22">
            <item row="0" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_5">
+            <widget class="QPlainTextEdit" name="plainTextEdit_r4">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -2014,6 +2032,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     color: #333333;
 }</string>
              </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="plainText">
               <string>Michael喜欢滑雪。为了获得速度，滑的区域必须向下倾斜，而且当滑倒坡底时，不得不再次走上坡或者等待搭载升降机。
 Michael想知道在一个区域中最长的滑坡。区域由一个二维数组给出额的每个数字代表点的高度。下面是一个例子：
@@ -2088,7 +2109,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_23">
            <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
-            <widget class="QPushButton" name="pushButton_6">
+            <widget class="QPushButton" name="pushButton_4">
              <property name="maximumSize">
               <size>
                <width>112</width>
@@ -2208,7 +2229,7 @@ QLabel[class=&quot;highlight&quot;] {
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
-            <widget class="QPlainTextEdit" name="plainTextEdit_11">
+            <widget class="QPlainTextEdit" name="plainTextEdit_in4">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -2399,7 +2420,7 @@ QLabel[class=&quot;highlight&quot;] {
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_12">
+            <widget class="QPlainTextEdit" name="plainTextEdit_out4">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -2448,6 +2469,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     background-color: #f9f9f9;
     color: #666666;
 }</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -2526,7 +2550,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_25">
            <item row="0" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_13">
+            <widget class="QPlainTextEdit" name="plainTextEdit_r5">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -2620,6 +2644,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     color: #333333;
 }</string>
              </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="plainText">
               <string>棋盘上A点有一个过河卒，需要走到目标B点。卒行走的规则：可以向下、或者向右。同时在棋盘上的某一点有一个对方的马（如C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点，如图中的C点和P1，……，P8，卒不能通过对方马的控制点。棋盘用坐标表示，A点(0,0)、B点(n, m) (n,m为不超过20的整数),同样马的位置坐标是需要给出的，C≠A且C≠B。现在要求你计算出卒从A点能够到达B点的路径的条数。</string>
              </property>
@@ -2709,7 +2736,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_26">
            <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
-            <widget class="QPushButton" name="pushButton_7">
+            <widget class="QPushButton" name="pushButton_5">
              <property name="maximumSize">
               <size>
                <width>112</width>
@@ -2829,7 +2856,7 @@ QLabel[class=&quot;highlight&quot;] {
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
-            <widget class="QPlainTextEdit" name="plainTextEdit_14">
+            <widget class="QPlainTextEdit" name="plainTextEdit_in5">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -3020,7 +3047,7 @@ QLabel[class=&quot;highlight&quot;] {
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_16">
+            <widget class="QPlainTextEdit" name="plainTextEdit_out5">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -3069,6 +3096,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     background-color: #f9f9f9;
     color: #666666;
 }</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -3147,7 +3177,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_29">
            <item row="0" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_17">
+            <widget class="QPlainTextEdit" name="plainTextEdit_r6">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -3241,6 +3271,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     color: #333333;
 }</string>
              </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="plainText">
               <string>你有n个工作和 m 个工人。给定三个数组：difficulty,profit和worker，其中:
 difficulty[i]表示第 i 个工作的难度，profit[i] 表示第 i 个工作的收益。
@@ -3312,7 +3345,7 @@ QGroupBox::title::separator {
           </property>
           <layout class="QGridLayout" name="gridLayout_30">
            <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
-            <widget class="QPushButton" name="pushButton_8">
+            <widget class="QPushButton" name="pushButton_6">
              <property name="maximumSize">
               <size>
                <width>112</width>
@@ -3427,12 +3460,12 @@ QLabel[class=&quot;highlight&quot;] {
 }</string>
              </property>
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'宋体'; font-size:12pt; color:#000000;&quot;&gt;输入&lt;/span&gt;&lt;span style=&quot; font-family:'Times New Roman','serif'; font-size:12pt; color:#000000;&quot;&gt;: difficulty[], profit[], worker[]&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第一行的 n 和 m 分别表示工作数量和工人数量&lt;/p&gt;&lt;p&gt;接下来的 n 行是每个工作的难度和利润&lt;/p&gt;&lt;p&gt;最后 m 行是每个工人的能力值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
-            <widget class="QPlainTextEdit" name="plainTextEdit_18">
+            <widget class="QPlainTextEdit" name="plainTextEdit_in6">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -3623,7 +3656,7 @@ QLabel[class=&quot;highlight&quot;] {
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QPlainTextEdit" name="plainTextEdit_19">
+            <widget class="QPlainTextEdit" name="plainTextEdit_out6">
              <property name="styleSheet">
               <string notr="true">QPlainTextEdit {
     background-color: #f5f7fa;
@@ -3672,6 +3705,9 @@ QPlainTextEdit[readOnly=&quot;true&quot;] {
     background-color: #f9f9f9;
     color: #666666;
 }</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
