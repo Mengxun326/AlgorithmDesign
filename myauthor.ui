@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>myauthor</class>
+ <widget class="QWidget" name="myauthor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="styleSheet">
+      <string notr="true">QPlainTextEdit {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0;
+    white-space: pre-wrap; /* 保留自动换行支持 */
+}
+
+QPlainTextEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 垂直滚动条 */
+QScrollBar:vertical {
+    background: #f1f1f1;
+    width: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #c1c1c1;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* 水平滚动条 */
+QScrollBar:horizontal {
+    background: #f1f1f1;
+    height: 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #c1c1c1;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #a1a1a1;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* 只读模式样式增强 */
+QPlainTextEdit[readOnly=&quot;true&quot;] {
+    background-color: #ffffff;
+    color: #333333;
+}</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>本项目团队由 6 位成员组成
+队长：王智杰
+队员：王志远、王紫蕊、张伟、贾旭东、肖玉婷
+团队成员充分发挥各自专长，深入研究分治、动态规划、贪心等算法，完成 6 个课程设计题目，合力打造出这个优秀的算法设计与分析项目成果。</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
